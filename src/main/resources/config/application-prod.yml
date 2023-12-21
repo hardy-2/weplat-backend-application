@@ -41,7 +41,7 @@ spring:
 #      auto-commit: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://test-changhee.cib4qsfwpvfa.ap-northeast-1.rds.amazonaws.com:3306/application?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://{DBENDPOINT}:{PORT}/{DBNAME}?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: admin
     password: Test123!
     hikari:
