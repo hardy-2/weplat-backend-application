@@ -207,13 +207,13 @@ subprojects {
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     }
 
-    war {
+/*    war {
         archiveFileName='application.war'
     }
-
-/*     test {
+*/
+     test {
         useJUnitPlatform()
-    } */
+    } 
 }
 
 project(':application-core') {
