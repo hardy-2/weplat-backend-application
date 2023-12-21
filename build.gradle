@@ -125,9 +125,9 @@ liquibase {
     activities {
         main {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://test-changhee.cib4qsfwpvfa.ap-northeast-1.rds.amazonaws.com:3306/weplat?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
-            username "admin"
-            password "Test123!"
+            url "jdbc:mysql://{DBENDPOINT}:{3306}/{DBNAME}?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
+            username ""
+            password ""
             changeLogFile "src/main/resources/config/liquibase/master.xml"
             defaultSchemaName "" // 필요에 따라 적절한 스키마 이름으로 설정
             logLevel "debug"
@@ -135,9 +135,9 @@ liquibase {
         }
         diffLog {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://test-changhee.cib4qsfwpvfa.ap-northeast-1.rds.amazonaws.com:3306/weplat?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
-            username "admin"
-            password "Test123!"
+            url "jdbc:mysql://{DBENDPOINT}:{3306}/{DBNAME}?useSSL=true&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul"
+            username ""
+            password ""
             changeLogFile project.ext.diffChangelogFile
             referenceUrl "hibernate:spring:com.job.domain?dialect=org.hibernate.dialect.MySQLDialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
             defaultSchemaName "" // 필요에 따라 적절한 스키마 이름으로 설정
@@ -210,6 +210,10 @@ subprojects {
     war {
         archiveFileName='application.war'
     }
+
+/*     test {
+        useJUnitPlatform()
+    } */
 }
 
 project(':application-core') {
